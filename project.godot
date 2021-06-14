@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Main Menu"
+run/main_scene="res://Menu/Main Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
