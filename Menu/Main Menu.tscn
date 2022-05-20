@@ -16,9 +16,6 @@ font_data = ExtResource( 5 )
 
 [node name="Title Screen" type="Control"]
 script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="background" type="Sprite" parent="."]
 position = Vector2( 800, 460 )
@@ -30,9 +27,6 @@ margin_left = 120.0
 margin_top = 80.0
 margin_right = 1800.0
 margin_bottom = 1000.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Logo" type="TextureRect" parent="Menu"]
 margin_right = 1680.0
@@ -60,6 +54,7 @@ margin_top = 125.0
 margin_right = 838.0
 margin_bottom = 186.0
 custom_fonts/font = ExtResource( 7 )
+scene_to_load = "res://Game/Game.tscn"
 
 [node name="OptionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
 margin_top = 206.0
@@ -75,9 +70,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Menu/CenterRow/CenterContainer"]
-margin_left = 1.0
+margin_left = 5.0
 margin_top = 110.0
-margin_right = 837.0
+margin_right = 833.0
 margin_bottom = 281.0
 custom_fonts/font = ExtResource( 7 )
 text = "Controls:
