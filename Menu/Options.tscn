@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Menu/Main Menu.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Menu/Options.gd" type="Script" id=2]
@@ -12,6 +12,10 @@ size = 32
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 32
 font_data = ExtResource( 3 )
 
@@ -40,22 +44,22 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="VBoxContainer"]
-margin_top = 50.0
+margin_top = 30.0
 margin_right = 300.0
-margin_bottom = 105.0
-custom_fonts/font = ExtResource( 1 )
+margin_bottom = 85.0
 custom_colors/font_color_shadow = Color( 0.00784314, 0.0235294, 1, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 4
+custom_fonts/font = ExtResource( 1 )
 text = "Options"
 align = 1
 valign = 1
 uppercase = true
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 109.0
+margin_top = 89.0
 margin_right = 300.0
-margin_bottom = 145.0
+margin_bottom = 125.0
 
 [node name="Music Sound" type="Label" parent="VBoxContainer/HBoxContainer1"]
 margin_right = 93.0
@@ -75,9 +79,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 149.0
+margin_top = 129.0
 margin_right = 300.0
-margin_bottom = 185.0
+margin_bottom = 165.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -103,10 +107,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="VBoxContainer"]
-margin_top = 189.0
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 169.0
 margin_right = 300.0
-margin_bottom = 250.0
+margin_bottom = 205.0
+
+[node name="FullScreen" type="Label" parent="VBoxContainer/HBoxContainer3"]
+margin_right = 172.0
+margin_bottom = 36.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 3 )
+text = "Full Screen:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer3/FullScreen"]
+margin_left = 179.27
+margin_top = 7.0
+margin_right = 203.27
+margin_bottom = 31.9597
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 209.0
+margin_right = 300.0
+margin_bottom = 270.0
 custom_fonts/font = ExtResource( 1 )
 text = "Back"
 __meta__ = {
@@ -120,5 +148,6 @@ visible = false
 
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer1/Music_Slider" to="." method="_on_Music_Slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer2/Game_Slider" to="." method="_on_Game_Slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/FullScreen/CheckBox" to="." method="_on_CheckBox_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

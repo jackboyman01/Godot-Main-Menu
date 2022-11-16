@@ -5,18 +5,21 @@ func _on_Button_pressed():
 	$FadeIn.show()
 	$FadeIn.fade_in()
 
+func _on_CheckBox_pressed():
+	$UISound.play()
+	OS.window_fullscreen = !OS.window_fullscreen
+
 func _on_FadeIn_fade_finished():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Menu/Main Menu.tscn")
 
 func _ready():
 	set_process(true)
-	$"VBoxContainer/HBoxContainer1/Music_Slider".grab_focus()
-	$"VBoxContainer/HBoxContainer1/Music_Slider".set_value(AudioServer.get_bus_volume_db(1))
-	$"VBoxContainer/HBoxContainer2/Game_Slider".set_value(AudioServer.get_bus_volume_db(2))
+	$VBoxContainer/HBoxContainer1/Music_Slider.value = AudioServer.get_bus_volume_db(1)
+	$VBoxContainer/HBoxContainer2/Game_Slider.value = AudioServer.get_bus_volume_db(2)
 
 func _process(_delta):
-	if Input.is_action_pressed("ui_cancel"):
+	if Input.is_action_pressed("key_exit"):
 		$FadeIn.show()
 		$FadeIn.fade_in()
 

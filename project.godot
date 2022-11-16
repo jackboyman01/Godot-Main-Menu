@@ -10,13 +10,13 @@ config_version=4
 
 [application]
 
-config/name="Packs"
+config/name="MainMenu"
 run/main_scene="res://Menu/Main Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-MusicPlayer="*res://Menu/MusicPlayer.tscn"
+MusicController="*res://autoloads/MusicController.tscn"
 
 [display]
 
