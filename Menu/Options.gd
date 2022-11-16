@@ -14,7 +14,10 @@ func _on_FadeIn_fade_finished():
 	get_tree().change_scene("res://Menu/Main Menu.tscn")
 
 func _ready():
+	if !OS.window_fullscreen:
+		OS.window_fullscreen = !OS.window_fullscreen
 	set_process(true)
+	$VBoxContainer/HBoxContainer1/Music_Slider.grab_focus()
 	$VBoxContainer/HBoxContainer1/Music_Slider.value = AudioServer.get_bus_volume_db(1)
 	$VBoxContainer/HBoxContainer2/Game_Slider.value = AudioServer.get_bus_volume_db(2)
 

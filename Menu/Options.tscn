@@ -127,9 +127,7 @@ margin_left = 179.27
 margin_top = 7.0
 margin_right = 203.27
 margin_bottom = 31.9597
-__meta__ = {
-"_edit_use_anchors_": false
-}
+pressed = true
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 margin_top = 209.0
