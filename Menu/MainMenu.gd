@@ -4,7 +4,9 @@ var scene_path_to_load
 
 func _ready():
 	set_process_input(true)
-	#get_window().mode = Window.MODE_FULLSCREEN
+	get_window().mode = Window.MODE_FULLSCREEN
+	MusicManager.playMainMenuMusic()
+	ConfigManager.load_audio_volumes()
 
 func _on_start_button_pressed():
 	scene_path_to_load = "res://Game.tscn"
@@ -31,5 +33,4 @@ func _on_FadeIn_fade_finished():
 
 func _input(event):
 	if event.is_action_pressed("key_exit"):
-		$UISound.play()
 		get_tree().quit()

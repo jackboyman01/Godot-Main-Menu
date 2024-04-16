@@ -6,6 +6,7 @@ var escape_held = false
 
 func _ready():
 	set_process(true)
+	MusicManager.playGameMusic()
 
 func _process(delta):
 	if Input.is_action_pressed("key_exit"):

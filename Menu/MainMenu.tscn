@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c28u6vvxqt0qm" path="res://Menu/Logo.png" id="4_4f730"]
 [ext_resource type="FontFile" uid="uid://bug6bdct05sxs" path="res://Menu/ARIAL.TTF" id="5_v3iv7"]
 [ext_resource type="PackedScene" path="res://fade_in/FadeIn.tscn" id="6_dn6px"]
-[ext_resource type="PackedScene" path="res://Menu/UISound.tscn" id="7_shcjs"]
+[ext_resource type="PackedScene" uid="uid://dok3pjh1bn7q7" path="res://Menu/UISound.tscn" id="7_shcjs"]
 
 [sub_resource type="FontFile" id="2"]
 fallbacks = Array[Font]([ExtResource("5_v3iv7")])
@@ -17,6 +17,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
 cache/0/18/0/ascent = 0.0
 cache/0/18/0/descent = 0.0
 cache/0/18/0/underline_position = 0.0
@@ -24,6 +25,15 @@ cache/0/18/0/underline_thickness = 0.0
 cache/0/18/0/scale = 1.0
 cache/0/18/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/18/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
 
 [node name="Title Screen" type="Control"]
 layout_mode = 3
