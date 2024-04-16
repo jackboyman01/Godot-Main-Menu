@@ -6,26 +6,27 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
+config_version=5
 
 [application]
 
-config/name="MainMenu"
-run/main_scene="res://Menu/Main Menu.tscn"
+config/name="Main Menu"
+run/main_scene="res://Menu/MainMenu.tscn"
+config/features=PackedStringArray("4.2")
 config/icon="res://icon.png"
-
-[autoload]
-
-MusicController="*res://autoloads/MusicController.tscn"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
-window/size/test_width=1080
-window/size/test_height=720
-window/stretch/mode="2d"
-window/stretch/aspect="keep"
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1080
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[filesystem]
+
+import/blender/enabled=false
 
 [global]
 
@@ -35,8 +36,8 @@ size=false
 
 key_exit={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
- ]
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
 }
 
 [physics]
@@ -45,4 +46,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/defaults/default_environment="res://default_env.tres"

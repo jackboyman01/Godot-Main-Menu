@@ -8,4 +8,3 @@ script = ExtResource( 2 )
 
 [node name="Button" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-bus = "Game"

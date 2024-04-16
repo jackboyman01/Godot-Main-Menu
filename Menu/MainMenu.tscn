@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3u3ey1h4gwcw"]
+
+[ext_resource type="Theme" uid="uid://fokx2du4r6xh" path="res://Menu/MainMenu.tres" id="1_idegf"]
+[ext_resource type="Script" path="res://Menu/MainMenu.gd" id="2_gnvcf"]
+[ext_resource type="Texture2D" uid="uid://basdhjtgotu44" path="res://Menu/background.png" id="3_i0sd6"]
+[ext_resource type="Texture2D" uid="uid://c28u6vvxqt0qm" path="res://Menu/Logo.png" id="4_4f730"]
+[ext_resource type="FontFile" uid="uid://bug6bdct05sxs" path="res://Menu/ARIAL.TTF" id="5_v3iv7"]
+[ext_resource type="PackedScene" path="res://fade_in/FadeIn.tscn" id="6_dn6px"]
+[ext_resource type="PackedScene" path="res://Menu/UISound.tscn" id="7_shcjs"]
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("5_v3iv7")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/18/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/18/0 = Vector2(0, 0)
+
+[node name="Title Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_idegf")
+script = ExtResource("2_gnvcf")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(800, 460)
+texture = ExtResource("3_i0sd6")
+offset = Vector2(160, 80)
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 80.0
+offset_right = 1800.0
+offset_bottom = 1000.0
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_4f730")
+stretch_mode = 4
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Menu/CenterRow/Buttons"]
+layout_mode = 2
+text = "START"
+flat = true
+
+[node name="OptionsButton" type="Button" parent="Menu/CenterRow/Buttons"]
+layout_mode = 2
+text = "OPTIONS"
+flat = true
+
+[node name="CreditsButton" type="Button" parent="Menu/CenterRow/Buttons"]
+layout_mode = 2
+text = "CREDITS"
+flat = true
+
+[node name="ExitButton" type="Button" parent="Menu/CenterRow/Buttons"]
+layout_mode = 2
+text = "EXIT"
+flat = true
+
+[node name="VersionLabel" type="Label" parent="Menu"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+theme_override_fonts/font = SubResource("2")
+text = "Version 1.0 (itch.io)"
+uppercase = true
+
+[node name="FadeIn" parent="." instance=ExtResource("6_dn6px")]
+visible = false
+layout_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UISound" parent="." instance=ExtResource("7_shcjs")]
+
+[connection signal="pressed" from="Menu/CenterRow/Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

@@ -1,25 +1,19 @@
 extends Control
 
-func _on_Button_pressed():
+func _on_back_button_pressed():
 	$UISound.play()
 	$FadeIn.show()
 	$FadeIn.fade_in()
 
 func _on_CheckBox_pressed():
 	$UISound.play()
-	OS.window_fullscreen = !OS.window_fullscreen
+	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (!((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN))) else Window.MODE_WINDOWED
 
 func _on_FadeIn_fade_finished():
-# warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Menu/Main Menu.tscn")
+	get_tree().change_scene_to_file("res://Menu/MainMenu.tscn")
 
 func _ready():
-	if !OS.window_fullscreen:
-		OS.window_fullscreen = !OS.window_fullscreen
 	set_process(true)
-	$VBoxContainer/HBoxContainer1/Music_Slider.grab_focus()
-	$VBoxContainer/HBoxContainer1/Music_Slider.value = AudioServer.get_bus_volume_db(1)
-	$VBoxContainer/HBoxContainer2/Game_Slider.value = AudioServer.get_bus_volume_db(2)
 
 func _process(_delta):
 	if Input.is_action_pressed("key_exit"):

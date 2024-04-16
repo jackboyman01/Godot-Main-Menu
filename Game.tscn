@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://xb27bis0qkc1"]
+
+[ext_resource type="PackedScene" path="res://fade_in/FadeIn.tscn" id="1_n1w4a"]
+[ext_resource type="Script" path="res://Game.gd" id="1_ryn0s"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_ryn0s")
+
+[node name="QuitLabel" type="Label" parent="."]
+visible = false
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 295.0
+offset_bottom = 123.0
+text = "HOLD 'ESCAPE' TO EXIT ..."
+
+[node name="FadeIn" parent="." instance=ExtResource("1_n1w4a")]
+visible = false
+
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

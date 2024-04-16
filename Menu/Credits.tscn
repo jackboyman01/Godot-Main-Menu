@@ -1,14 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://1s5pxctxigj6"]
+[gd_scene load_steps=11 format=3 uid="uid://wgtxdq5b6xgh"]
 
-[ext_resource type="Theme" uid="uid://fokx2du4r6xh" path="res://Menu/MainMenu.tres" id="1_8lvcq"]
-[ext_resource type="Script" path="res://Menu/Options.gd" id="2"]
-[ext_resource type="FontFile" uid="uid://bug6bdct05sxs" path="res://Menu/ARIAL.TTF" id="3"]
-[ext_resource type="Texture2D" uid="uid://basdhjtgotu44" path="res://Menu/background.png" id="4"]
-[ext_resource type="PackedScene" path="res://fade_in/FadeIn.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://Menu/UISound.tscn" id="6"]
+[ext_resource type="Script" path="res://Menu/Credits.gd" id="1_1hca0"]
+[ext_resource type="Theme" uid="uid://fokx2du4r6xh" path="res://Menu/MainMenu.tres" id="1_62fse"]
+[ext_resource type="PackedScene" path="res://fade_in/FadeIn.tscn" id="2_khrmr"]
+[ext_resource type="Texture2D" uid="uid://basdhjtgotu44" path="res://Menu/background.png" id="3_boncf"]
+[ext_resource type="FontFile" uid="uid://bug6bdct05sxs" path="res://Menu/ARIAL.TTF" id="3_s0b1i"]
+[ext_resource type="PackedScene" path="res://Menu/UISound.tscn" id="5_pnpku"]
 
-[sub_resource type="FontFile" id="1"]
-fallbacks = Array[Font]([ExtResource("3")])
+[sub_resource type="FontFile" id="FontFile_1fwo1"]
+fallbacks = Array[Font]([ExtResource("3_s0b1i")])
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -16,8 +16,8 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id="2"]
-fallbacks = Array[Font]([ExtResource("3")])
+[sub_resource type="FontFile" id="FontFile_7jto2"]
+fallbacks = Array[Font]([ExtResource("3_s0b1i")])
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -25,8 +25,8 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id="3"]
-fallbacks = Array[Font]([ExtResource("3")])
+[sub_resource type="FontFile" id="FontFile_mqjhl"]
+fallbacks = Array[Font]([ExtResource("3_s0b1i")])
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -34,8 +34,8 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id="FontFile_30wuu"]
-fallbacks = Array[Font]([ExtResource("3")])
+[sub_resource type="FontFile" id="FontFile_r0rs0"]
+fallbacks = Array[Font]([ExtResource("3_s0b1i")])
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -61,22 +61,21 @@ cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/50/0/kerning_overrides/20/0 = Vector2(0, 0)
 cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
 
-[node name="Options" type="Control"]
+[node name="Credits" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_8lvcq")
-script = ExtResource("2")
+theme = ExtResource("1_62fse")
+script = ExtResource("1_1hca0")
 
-[node name="background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("4")
+texture = ExtResource("3_boncf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
 offset_left = 852.0
 offset_top = 420.0
 offset_right = 1152.0
@@ -87,23 +86,19 @@ alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Options"
+text = "Credits"
+horizontal_alignment = 1
 uppercase = true
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="Music Sound" type="Label" parent="VBoxContainer/HBoxContainer1"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("1")
-text = "Music:"
+theme_override_fonts/font = SubResource("FontFile_1fwo1")
+text = "Music: jackboyman"
 uppercase = true
-
-[node name="Music_Slider" type="HSlider" parent="VBoxContainer/HBoxContainer1"]
-layout_mode = 2
-size_flags_horizontal = 3
-min_value = -30.0
-max_value = 0.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -111,47 +106,32 @@ alignment = 1
 
 [node name="Game Sound" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("2")
-text = "Game:"
+theme_override_fonts/font = SubResource("FontFile_7jto2")
+text = "Game: jackboyman"
 uppercase = true
-
-[node name="Game_Slider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-min_value = -30.0
-max_value = 0.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="FullScreen" type="Label" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_fonts/font = SubResource("3")
-text = "Full Screen:"
+theme_override_fonts/font = SubResource("FontFile_mqjhl")
+text = "Art: jackboyman"
 uppercase = true
-
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer3/FullScreen"]
-layout_mode = 0
-offset_left = 250.0
-offset_right = 274.0
-offset_bottom = 24.0
-button_pressed = true
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_30wuu")
+theme_override_fonts/font = SubResource("FontFile_r0rs0")
 text = "BACK"
 flat = true
 
-[node name="FadeIn" parent="." instance=ExtResource("5")]
+[node name="FadeIn" parent="." instance=ExtResource("2_khrmr")]
 visible = false
 layout_mode = 0
 
-[node name="UISound" parent="." instance=ExtResource("6")]
+[node name="UISound" parent="." instance=ExtResource("5_pnpku")]
 
-[connection signal="value_changed" from="VBoxContainer/HBoxContainer1/Music_Slider" to="." method="_on_Music_Slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/HBoxContainer2/Game_Slider" to="." method="_on_Game_Slider_value_changed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer3/FullScreen/CheckBox" to="." method="_on_CheckBox_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
