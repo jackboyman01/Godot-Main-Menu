@@ -21,6 +21,10 @@ func _on_credits_button_pressed():
 	on_Button_pressed()
 
 func _on_exit_button_pressed():
+	$UISound.play()
+	$Menu.hide()
+	$background.hide()
+	await get_tree().create_timer(1.0).timeout
 	get_tree().quit()
 
 func on_Button_pressed():
