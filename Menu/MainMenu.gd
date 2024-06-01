@@ -4,7 +4,8 @@ var scene_path_to_load
 
 func _ready():
 	set_process_input(true)
-	get_window().mode = Window.MODE_FULLSCREEN
+	if ConfigManager.load_fullscreen_setting():
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	MusicManager.playMainMenuMusic()
 	ConfigManager.load_audio_volumes()
 
