@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dok3pjh1bn7q7"]
 
 [ext_resource type="AudioStream" uid="uid://d2e6xtxthma36" path="res://Menu/Button.wav" id="1"]
-[ext_resource type="Script" path="res://Menu/UISound.gd" id="2"]
+[ext_resource type="Script" uid="uid://7835u7jxhjly" path="res://Menu/UISound.gd" id="2"]
 
 [node name="UISound" type="Node"]
 script = ExtResource("2")

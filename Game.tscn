@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://xb27bis0qkc1"]
 
 [ext_resource type="PackedScene" uid="uid://42q6vd88na6l" path="res://fade_in/FadeIn.tscn" id="1_n1w4a"]
-[ext_resource type="Script" path="res://Game.gd" id="1_ryn0s"]
+[ext_resource type="Script" uid="uid://bro8f77jk8ecr" path="res://Game.gd" id="1_ryn0s"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ryn0s")

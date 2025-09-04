@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Main Menu"
 run/main_scene="res://Menu/MainMenu.tscn"
-config/features=PackedStringArray("4.2")
+config/features=PackedStringArray("4.4")
 config/icon="res://icon.png"
 
 [autoload]
@@ -24,6 +24,7 @@ ConfigManager="*res://ConfigManager.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=2
 window/size/window_width_override=1080
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
@@ -41,7 +42,7 @@ size=false
 
 key_exit={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 
