@@ -1,11 +1,23 @@
-# Godot-specific ignores
+# Godot 4+ generated editor/import cache (includes shader/vulkan caches)
+.godot/
+
+# Godot 3 leftover import folder (if present)
 .import/
+
+# Export config (machine-specific / optional to commit)
 export.cfg
 export_presets.cfg
 
-# Imported translations (automatically generated from CSV files)
+# Imported translations (generated from CSV)
 *.translation
 
-# Mono-specific ignores
+# Mono / C# (if used)
 .mono/
 data_*/
+**/bin/
+**/obj/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini

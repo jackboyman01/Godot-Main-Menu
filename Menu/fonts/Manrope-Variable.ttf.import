@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bug6bdct05sxs"
-path="res://.godot/imported/ARIAL.TTF-936708ac109d5fbfef047a8dd131979e.fontdata"
+uid="uid://b4iriewjuoojg"
+path="res://.godot/imported/Manrope-Variable.ttf-b1f9d0d27db37630916fab70b69dbc1d.fontdata"
 
 [deps]
 
-source_file="res://Menu/ARIAL.TTF"
-dest_files=["res://.godot/imported/ARIAL.TTF-936708ac109d5fbfef047a8dd131979e.fontdata"]
+source_file="res://Menu/fonts/Manrope-Variable.ttf"
+dest_files=["res://.godot/imported/Manrope-Variable.ttf-b1f9d0d27db37630916fab70b69dbc1d.fontdata"]
 
 [params]
 
@@ -21,6 +21,7 @@ msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
+modulate_color_glyphs=false
 hinting=1
 subpixel_positioning=1
 keep_rounding_remainders=true

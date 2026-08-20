@@ -1,101 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://1s5pxctxigj6"]
+[gd_scene load_steps=6 format=3 uid="uid://1s5pxctxigj6"]
 
-[ext_resource type="Theme" uid="uid://fokx2du4r6xh" path="res://Menu/MainMenu.tres" id="1_8lvcq"]
-[ext_resource type="Script" uid="uid://biirb7xleac5k" path="res://Menu/Options.gd" id="2"]
-[ext_resource type="FontFile" uid="uid://bug6bdct05sxs" path="res://Menu/ARIAL.TTF" id="3"]
-[ext_resource type="Texture2D" uid="uid://basdhjtgotu44" path="res://Menu/background.png" id="4"]
-[ext_resource type="PackedScene" uid="uid://42q6vd88na6l" path="res://fade_in/FadeIn.tscn" id="5"]
-[ext_resource type="PackedScene" uid="uid://dok3pjh1bn7q7" path="res://Menu/UISound.tscn" id="6"]
-
-[sub_resource type="FontFile" id="1"]
-fallbacks = Array[Font]([ExtResource("3")])
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
-
-[sub_resource type="FontFile" id="2"]
-fallbacks = Array[Font]([ExtResource("3")])
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
-
-[sub_resource type="FontFile" id="3"]
-fallbacks = Array[Font]([ExtResource("3")])
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
-
-[sub_resource type="FontFile" id="FontFile_30wuu"]
-fallbacks = Array[Font]([ExtResource("3")])
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/20/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/50/0/ascent = 0.0
-cache/0/50/0/descent = 0.0
-cache/0/50/0/underline_position = 0.0
-cache/0/50/0/underline_thickness = 0.0
-cache/0/50/0/scale = 1.0
-cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+[ext_resource type="Theme" uid="uid://fokx2du4r6xh" path="res://Menu/MainMenu.tres" id="1_theme"]
+[ext_resource type="Script" uid="uid://biirb7xleac5k" path="res://Menu/Options.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://basdhjtgotu44" path="res://Menu/background.png" id="3_bg"]
+[ext_resource type="PackedScene" uid="uid://42q6vd88na6l" path="res://fade_in/FadeIn.tscn" id="4_fade"]
+[ext_resource type="PackedScene" uid="uid://dok3pjh1bn7q7" path="res://Menu/UISound.tscn" id="5_sound"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -104,82 +13,116 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_8lvcq")
-script = ExtResource("2")
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
 
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-texture = ExtResource("4")
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bg")
+expand_mode = 1
+stretch_mode = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 852.0
-offset_top = 420.0
-offset_right = 1152.0
-offset_bottom = 720.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Center/Panel"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
 alignment = 1
 
-[node name="Title" type="Label" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="Center/Panel/Margin/VBox"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
 text = "Options"
 horizontal_alignment = 1
-uppercase = true
 
-[node name="Music Sound" type="Label" parent="VBoxContainer"]
+[node name="MasterLabel" type="Label" parent="Center/Panel/Margin/VBox"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("1")
-text = "Music Volume"
-uppercase = true
+theme_override_font_sizes/font_size = 18
+text = "Master"
 
-[node name="Music_Slider" type="HSlider" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-min_value = -30.0
-max_value = 0.0
-
-[node name="Game Sound" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("2")
-text = "Game volume"
-uppercase = true
-
-[node name="Game_Slider" type="HSlider" parent="VBoxContainer"]
+[node name="MasterSlider" type="HSlider" parent="Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = -30.0
 max_value = 0.0
 
-[node name="FullScreen" type="Label" parent="VBoxContainer"]
+[node name="MusicLabel" type="Label" parent="Center/Panel/Margin/VBox"]
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_fonts/font = SubResource("3")
-text = "Full Screen:"
-uppercase = true
+theme_override_font_sizes/font_size = 18
+text = "Music"
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/FullScreen"]
-layout_mode = 0
-offset_left = 250.0
-offset_top = 5.0
-offset_right = 274.0
-offset_bottom = 29.0
-
-[node name="BackButton" type="Button" parent="VBoxContainer"]
+[node name="MusicSlider" type="HSlider" parent="Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_30wuu")
-text = "BACK"
+size_flags_horizontal = 3
+min_value = -30.0
+max_value = 0.0
+
+[node name="SfxLabel" type="Label" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Sound Effects"
+
+[node name="SfxSlider" type="HSlider" parent="Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -30.0
+max_value = 0.0
+
+[node name="FullscreenRow" type="HBoxContainer" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FullscreenCheck" type="CheckButton" parent="Center/Panel/Margin/VBox/FullscreenRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fullscreen"
+
+[node name="Spacer" type="Control" parent="Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+text = "Back"
 flat = true
+alignment = 0
 
-[node name="FadeIn" parent="." instance=ExtResource("5")]
+[node name="FadeIn" parent="." instance=ExtResource("4_fade")]
 visible = false
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="UISound" parent="." instance=ExtResource("6")]
+[node name="UISound" parent="." instance=ExtResource("5_sound")]
 
-[connection signal="value_changed" from="VBoxContainer/Music_Slider" to="." method="_on_Music_Slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/Game_Slider" to="." method="_on_Game_Slider_value_changed"]
-[connection signal="pressed" from="VBoxContainer/FullScreen/CheckBox" to="." method="_on_CheckBox_pressed"]
-[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="Center/Panel/Margin/VBox/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Center/Panel/Margin/VBox/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Center/Panel/Margin/VBox/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="Center/Panel/Margin/VBox/FullscreenRow/FullscreenCheck" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="Center/Panel/Margin/VBox/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

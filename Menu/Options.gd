@@ -1,65 +1,64 @@
 extends Control
 
-var config = ConfigFile.new()
-var musicVolume = 0.0
-var gameVolume = 0.0
-var fullscreenEnabled = false
+const MenuButtonFx = preload("res://Menu/MenuButtonFx.gd")
 
-# Add references to your sliders
-@onready var musicSlider = $VBoxContainer/Music_Slider
-@onready var gameSlider = $VBoxContainer/Game_Slider
+@onready var master_slider: HSlider = $Center/Panel/Margin/VBox/MasterSlider
+@onready var music_slider: HSlider = $Center/Panel/Margin/VBox/MusicSlider
+@onready var sfx_slider: HSlider = $Center/Panel/Margin/VBox/SfxSlider
+@onready var fullscreen_btn: CheckButton = $Center/Panel/Margin/VBox/FullscreenRow/FullscreenCheck
+@onready var back_button: Button = $Center/Panel/Margin/VBox/BackButton
 
-func _on_back_button_pressed():
+
+func _ready() -> void:
+	ConfigManager.load_audio_volumes()
+	ConfigManager.load_fullscreen_setting()
+	for control in [master_slider, music_slider, sfx_slider, fullscreen_btn]:
+		control.set_block_signals(true)
+	master_slider.value = ConfigManager.master_volume
+	music_slider.value = ConfigManager.music_volume
+	sfx_slider.value = ConfigManager.game_volume
+	fullscreen_btn.button_pressed = ConfigManager.fullscreen_enabled
+	for control in [master_slider, music_slider, sfx_slider, fullscreen_btn]:
+		control.set_block_signals(false)
+	call_deferred("_setup_button_fx")
+
+
+func _setup_button_fx() -> void:
+	MenuButtonFx.wire_buttons([back_button, fullscreen_btn])
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("key_exit"):
+		_go_back()
+		get_viewport().set_input_as_handled()
+
+
+func _on_back_button_pressed() -> void:
+	_go_back()
+
+
+func _go_back() -> void:
 	$UISound.play()
 	$FadeIn.show()
 	$FadeIn.fade_in()
 
-func _on_CheckBox_pressed():
-	$UISound.play()
-	if (!((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN))):
-		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
-		fullscreenEnabled = true
-	else:
-		get_window().mode = Window.MODE_WINDOWED
-		fullscreenEnabled = false
 
-	# Save the fullscreen setting
-	ConfigManager.save_fullscreen_setting(fullscreenEnabled)
-
-func _on_FadeIn_fade_finished():
+func _on_FadeIn_fade_finished() -> void:
 	get_tree().change_scene_to_file("res://Menu/MainMenu.tscn")
 
-func _ready():
-	set_process(true)
-	ConfigManager.load_audio_volumes() # Load saved audio volumes when the game starts
-	# Set initial value for the fullscreen checkbox
-	ConfigManager.load_fullscreen_setting()
-	$VBoxContainer/FullScreen/CheckBox.button_pressed = ConfigManager.fullscreenEnabled
-	# Set initial values for the sliders
-	musicSlider.value = ConfigManager.musicVolume
-	gameSlider.value = ConfigManager.gameVolume
 
-func _process(_delta):
-	if Input.is_action_pressed("key_exit"):
-		$FadeIn.show()
-		$FadeIn.fade_in()
+func _on_fullscreen_toggled(pressed: bool) -> void:
+	$UISound.play()
+	ConfigManager.apply_fullscreen(pressed)
 
-func _on_Music_Slider_value_changed(value):
-	AudioServer.set_bus_volume_db(1, lerp(AudioServer.get_bus_volume_db(1), value, 0.5))
-	musicVolume = value
-	ConfigManager.musicVolume = value
-	if musicVolume == -30: 
-		AudioServer.set_bus_mute(1, true) 
-	else: 
-		AudioServer.set_bus_mute(1, false)
-	ConfigManager.save_audio_volumes() # Save the current audio volumes
 
-func _on_Game_Slider_value_changed(value):
-	AudioServer.set_bus_volume_db(2, lerp(AudioServer.get_bus_volume_db(2), value, 0.5))
-	gameVolume = value
-	ConfigManager.gameVolume = value
-	if gameVolume == -30: 
-		AudioServer.set_bus_mute(2, true) 
-	else: 
-		AudioServer.set_bus_mute(2, false)
-	ConfigManager.save_audio_volumes() # Save the current audio volumes
+func _on_master_slider_value_changed(value: float) -> void:
+	ConfigManager.set_master_volume(value)
+
+
+func _on_music_slider_value_changed(value: float) -> void:
+	ConfigManager.set_music_volume(value)
+
+
+func _on_sfx_slider_value_changed(value: float) -> void:
+	ConfigManager.set_game_volume(value)

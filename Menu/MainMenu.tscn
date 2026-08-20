@@ -1,114 +1,119 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3u3ey1h4gwcw"]
+[gd_scene load_steps=7 format=3 uid="uid://b3u3ey1h4gwcw"]
 
-[ext_resource type="Theme" uid="uid://fokx2du4r6xh" path="res://Menu/MainMenu.tres" id="1_idegf"]
-[ext_resource type="Script" uid="uid://cuq01ja56aift" path="res://Menu/MainMenu.gd" id="2_gnvcf"]
-[ext_resource type="Texture2D" uid="uid://basdhjtgotu44" path="res://Menu/background.png" id="3_i0sd6"]
-[ext_resource type="Texture2D" uid="uid://c28u6vvxqt0qm" path="res://Menu/Logo.png" id="4_4f730"]
-[ext_resource type="FontFile" uid="uid://bug6bdct05sxs" path="res://Menu/ARIAL.TTF" id="5_v3iv7"]
-[ext_resource type="PackedScene" uid="uid://42q6vd88na6l" path="res://fade_in/FadeIn.tscn" id="6_dn6px"]
-[ext_resource type="PackedScene" uid="uid://dok3pjh1bn7q7" path="res://Menu/UISound.tscn" id="7_shcjs"]
+[ext_resource type="Theme" uid="uid://fokx2du4r6xh" path="res://Menu/MainMenu.tres" id="1_theme"]
+[ext_resource type="Script" uid="uid://cuq01ja56aift" path="res://Menu/MainMenu.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://basdhjtgotu44" path="res://Menu/background.png" id="3_bg"]
+[ext_resource type="Texture2D" uid="uid://c28u6vvxqt0qm" path="res://Menu/Logo.png" id="4_logo"]
+[ext_resource type="PackedScene" uid="uid://42q6vd88na6l" path="res://fade_in/FadeIn.tscn" id="5_fade"]
+[ext_resource type="PackedScene" uid="uid://dok3pjh1bn7q7" path="res://Menu/UISound.tscn" id="6_sound"]
 
-[sub_resource type="FontFile" id="2"]
-fallbacks = Array[Font]([ExtResource("5_v3iv7")])
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/18/0/ascent = 0.0
-cache/0/18/0/descent = 0.0
-cache/0/18/0/underline_position = 0.0
-cache/0/18/0/underline_thickness = 0.0
-cache/0/18/0/scale = 1.0
-cache/0/18/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/18/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/18/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
-
-[node name="Title Screen" type="Control"]
+[node name="TitleScreen" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-theme = ExtResource("1_idegf")
-script = ExtResource("2_gnvcf")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
 
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(800, 460)
-texture = ExtResource("3_i0sd6")
-offset = Vector2(160, 80)
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bg")
+expand_mode = 1
+stretch_mode = 6
 
-[node name="Menu" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 80.0
-offset_right = 1800.0
-offset_bottom = 1000.0
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Logo" type="TextureRect" parent="Menu"]
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(460, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("4_4f730")
-stretch_mode = 4
 
-[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+[node name="Margin" type="MarginContainer" parent="Center/Panel"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
-[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin"]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-theme_override_constants/separation = 20
+theme_override_constants/separation = 24
 alignment = 1
 
-[node name="StartButton" type="Button" parent="Menu/CenterRow/Buttons"]
+[node name="Logo" type="TextureRect" parent="Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(360, 110)
 layout_mode = 2
-text = "START"
-flat = true
+size_flags_horizontal = 4
+texture = ExtResource("4_logo")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="OptionsButton" type="Button" parent="Menu/CenterRow/Buttons"]
+[node name="Buttons" type="VBoxContainer" parent="Center/Panel/Margin/VBox"]
 layout_mode = 2
-text = "OPTIONS"
-flat = true
+theme_override_constants/separation = 8
+alignment = 1
 
-[node name="CreditsButton" type="Button" parent="Menu/CenterRow/Buttons"]
+[node name="StartButton" type="Button" parent="Center/Panel/Margin/VBox/Buttons"]
 layout_mode = 2
-text = "CREDITS"
-flat = true
-
-[node name="ExitButton" type="Button" parent="Menu/CenterRow/Buttons"]
-layout_mode = 2
-text = "EXIT"
-flat = true
-
-[node name="VersionLabel" type="Label" parent="Menu"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 10
-theme_override_fonts/font = SubResource("2")
-text = "Version 1.0 (itch.io)"
-uppercase = true
-
-[node name="FadeIn" parent="." instance=ExtResource("6_dn6px")]
-visible = false
-layout_mode = 0
 size_flags_horizontal = 3
-size_flags_vertical = 3
+text = "Start"
+flat = true
+alignment = 0
 
-[node name="UISound" parent="." instance=ExtResource("7_shcjs")]
+[node name="OptionsButton" type="Button" parent="Center/Panel/Margin/VBox/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Options"
+flat = true
+alignment = 0
 
-[connection signal="pressed" from="Menu/CenterRow/Buttons/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Menu/CenterRow/Buttons/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="Menu/CenterRow/Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="Menu/CenterRow/Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[node name="CreditsButton" type="Button" parent="Center/Panel/Margin/VBox/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Credits"
+flat = true
+alignment = 0
+
+[node name="ExitButton" type="Button" parent="Center/Panel/Margin/VBox/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Exit"
+flat = true
+alignment = 0
+
+[node name="VersionLabel" type="Label" parent="Center/Panel/Margin/VBox"]
+modulate = Color(1, 1, 1, 0.55)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Godot 4.6 Template"
+horizontal_alignment = 1
+
+[node name="FadeIn" parent="." instance=ExtResource("5_fade")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UISound" parent="." instance=ExtResource("6_sound")]
+
+[connection signal="pressed" from="Center/Panel/Margin/VBox/Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Center/Panel/Margin/VBox/Buttons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Center/Panel/Margin/VBox/Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Center/Panel/Margin/VBox/Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
